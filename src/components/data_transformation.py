@@ -122,3 +122,10 @@ class DataTransformation:
             )
         except Exception as e:
             raise CustomException(e,sys)
+if __name__ == "__main__":
+    obj = DataTransformation()
+    train_arr, test_arr, preprocessor_path = obj.initiate_data_transformation(
+        train_path="artifacts/train.csv",   
+        test_path="artifacts/test.csv"    
+    )
+    print("Preprocessor saved at:", preprocessor_path)
